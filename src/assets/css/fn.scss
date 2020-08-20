@@ -1,0 +1,86 @@
+//第一种rem布局方式
+$brower_default_font_size: 16px !default;
+html {
+    font-size: $brower_default_font_size;
+}
+@function pxTorem($px) {
+    @return $px / $brower_default_font_size * 1rem;
+}
+//第二种rem布局方式        hotcss插件的px2rem.scss
+$designWidth: 750;
+@function px2rem($px) {
+    @return $px * 320 / $designWidth/20 + rem;
+}
+$fontSize: 20;
+@mixin setRem($name, $val...) {
+    // ...固定写法,向后若干个值
+    $max: length($val); //4
+    $str: "";
+    // 从1开始到$max(4)
+    @for $i from 1 through $max {
+        $value: nth($val, $i) / 2 / $fontSize; //2.17391
+        $str: $str + $value + rem; //4.34783rem
+
+        @if $i<$max {
+            $str: #{$str + " "}; //4.34783rem空格4.34783rem空格
+        }
+    }
+    #{$name}: $str;
+}
+
+//动画
+@mixin animation($val) {
+    animation: $val;
+    -webkit-animation: $val;
+    -moz-animation: $val;
+    -ms-animation: $val;
+}
+@mixin keyframes($name, $obj) {
+    @keyframes #{$name} {
+        @each $i, $val in $obj {
+            #{$i} {
+                @each $v1, $val2 in $val {
+                    #{$v1}: $val2;
+                }
+            }
+        }
+    }
+}
+//@2x
+@mixin bg-image($url) {
+    background-image: url($url+"@2x.png");
+    @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+        background-image: url($url+"@3x.png");
+    }
+}
+
+@mixin bg($url) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+}
+@mixin imgwh($w, $h) {
+    $remW: $w * 320 / $designWidth/20 + rem;
+    $remH: $h * 320 / $designWidth/20 + rem;
+    width: $remW;
+    height: $remH;
+    margin: 0 auto;
+    display: block;
+}
+@mixin pd($t, $r, $b, $l) {
+    $t: $t * 320 / $designWidth/20 + rem;
+    $r: $r * 320 / $designWidth/20 + rem;
+    $b: $b * 320 / $designWidth/20 + rem;
+    $l: $l * 320 / $designWidth/20 + rem;
+    padding: $t $r $b $l;
+}
+@mixin position() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 999;
+}
