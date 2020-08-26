@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-08-13 15:22:32
+ * @LastEditTime: 2020-08-26 17:44:19
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vueLearn1.0\src\components\describe.vue
+-->
 <template>
 	<div class="Describe">
 		<h1>1:computed:(vm)=>{}写法、function(){}写法、</h1>
@@ -8,7 +16,7 @@
 			this.$attrs：父组件传递下来的但是在你调用的那组件（this）里没注册使用的，需要继续传递下去的所有
 		</h1>
 		<h1>5:父子通信bus方式：main.js---->vm原型上注册bus</h1>
-		<h1>6:待更新</h1>
+		<h1>6:待更新____测试更改</h1>
 	</div>
 </template>
 
