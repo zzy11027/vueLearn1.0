@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2020-08-13 15:22:32
- * @LastEditTime: 2020-08-26 17:44:19
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vueLearn1.0\src\components\describe.vue
--->
 <template>
 	<div class="Describe">
 		<h1>1:computed:(vm)=>{}写法、function(){}写法、</h1>
