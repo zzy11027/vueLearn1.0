@@ -10,13 +10,41 @@ const routes = [
         redirect: (to) => {
             // const { hash, params, query } = to;
             // console.log("object :>> ", hash, params, query);
-            return "/home";
+            return "/nav";
         }
+    },
+    {
+        path: "/nav",
+        name: "Nav",
+        component: () => import("@/views/nav.vue")
     },
     {
         path: "/home",
         name: "Home",
         component: () => import("../views/Home.vue"),
+        redirect: "/home/vue2Learn",
+        children: [
+            {
+                path: "vue2Learn",
+                component: () => import(/* webpackChunkName: "productpopularization" */ "@/views/vue2Learn.vue"),
+                meta: {
+                    title: "old-learn",
+                    icon: "",
+                    fontSize: "",
+                    marginBottom: "-"
+                }
+            },
+            {
+                path: "otherLearn",
+                component: () => import(/* webpackChunkName: "productpopularization" */ "@/views/otherLearn.vue"),
+                meta: {
+                    title: "other-learn",
+                    icon: "",
+                    fontSize: "",
+                    marginBottom: "-"
+                }
+            }
+        ],
         meta: {
             requireAuth: true // 添加该字段，表示进入这个路由是需要登录的
         }

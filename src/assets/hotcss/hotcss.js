@@ -27,9 +27,7 @@
                 if (maxWidthMatch) {
                     maxWidth = parseFloat(maxWidthMatch[1]);
                 }
-                var designWidthMatch = hotcssCon.match(
-                    /design-width=([\d.]+)/
-                );
+                var designWidthMatch = hotcssCon.match(/design-width=([\d.]+)/);
                 if (designWidthMatch) {
                     designWidth = parseFloat(designWidthMatch[1]);
                 }
@@ -89,9 +87,7 @@
 
     hotcss.mresize = function() {
         //对，这个就是核心方法了，给HTML设置font-size。
-        var innerWidth =
-            document.documentElement.getBoundingClientRect().width ||
-            window.innerWidth;
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
 
         if (hotcss.maxWidth && innerWidth / hotcss.dpr > hotcss.maxWidth) {
             innerWidth = hotcss.maxWidth * hotcss.dpr;
@@ -101,8 +97,7 @@
             return false;
         }
 
-        document.documentElement.style.fontSize =
-            (innerWidth * 20) / 320 + "px";
+        document.documentElement.style.fontSize = (innerWidth * 20) / 320 + "px";
 
         hotcss.callback && hotcss.callback();
     };

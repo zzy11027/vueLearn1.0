@@ -13,10 +13,12 @@ import getAwesomeSwiper from "vue-awesome-swiper/dist/exporter"; //全局swipera
 import HTTPS from "@/utils/https.js"; //全局axios
 import ENV from "@/utils/env.js"; //全局环境
 import webSocket from "@/utils/socket.js"; //全局socket
-import "@/assets/hotcss/hotcss.js"; //全局rem
+// import "@/assets/hotcss/hotcss.js"; //全局rem
+import vuetify from "@/plugins/vuetify";
 import "./assets/css/reset.css"; //全局css
 import "./assets/font/font.scss"; //全局字体图标
 import "swiper/swiper-bundle.css"; //全局swiper
+import "vuetify/dist/vuetify.min.css";
 const baseURL = {
     value: process.env.VUE_APP_BASE_API,
     writable: false,
@@ -48,6 +50,7 @@ SwiperClass.use([Pagination, Mousewheel, Autoplay]); //swiperAPI
 Vue.use(eventBus); //总线------>父子通信
 // Vue.use(loader); //图片预加载
 new Vue({
+    vuetify,
     router,
     store,
     render: (h) => h(App)

@@ -12,7 +12,7 @@ export default {
 	},
 	created() {},
 	mounted() {
-		console.log('孙子组件已经拿到了$attrs :>> ', this.$attrs);
+		// console.log('孙子组件已经拿到了$attrs :>> ', this.$attrs);
 	},
 	methods: {
 		listen() {

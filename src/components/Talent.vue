@@ -24,7 +24,7 @@ export default {
 		return {};
 	},
 	created() {
-		console.log('this.$attrs :>> ', this.$attrs);
+		// console.log('this.$attrs :>> ', this.$attrs);
 		// console.log('this.$attrs :>> ', this.$listeners);
 		// console.log('子组件created生命周期 :>> ', '子组件created生命周期');
 	},
