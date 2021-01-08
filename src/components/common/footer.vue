@@ -1,7 +1,7 @@
 <template>
 	<div class="Footer">
-		<router-link to="/home/vue2Learn" tag="div">vue2Learn</router-link>
-		<router-link to="/home/otherLearn" tag="div">Other</router-link>
+		<router-link to="/vue2/vue2Learn" tag="div">vue2Learn</router-link>
+		<router-link to="/vue2/otherLearn" tag="div">Other</router-link>
 	</div>
 </template>
 

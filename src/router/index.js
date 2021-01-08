@@ -7,26 +7,31 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: "",
-        redirect: (to) => {
+        redirect: () => {
             // const { hash, params, query } = to;
             // console.log("object :>> ", hash, params, query);
-            return "/nav";
+            return "/learnNav";
         }
     },
     {
-        path: "/nav",
+        path: "/learnNav",
         name: "Nav",
         component: () => import("@/views/nav.vue")
     },
     {
-        path: "/home",
-        name: "Home",
-        component: () => import("../views/Home.vue"),
-        redirect: "/home/vue2Learn",
+        path: "/apply-call",
+        name: "apply-call",
+        component: () => import(/* webpackChunkName: "productpopularization" */ "@/views/JsLearn/apply-call.vue")
+    },
+    {
+        path: "/vue2",
+        name: "vue2Learn",
+        component: () => import("../views/vue2.vue"),
+        redirect: "/vue2/vue2Learn",
         children: [
             {
                 path: "vue2Learn",
-                component: () => import(/* webpackChunkName: "productpopularization" */ "@/views/vue2Learn.vue"),
+                component: () => import(/* webpackChunkName: "productpopularization" */ "@/views/vue2Learn/vue2Learn.vue"),
                 meta: {
                     title: "old-learn",
                     icon: "",
@@ -36,7 +41,7 @@ const routes = [
             },
             {
                 path: "otherLearn",
-                component: () => import(/* webpackChunkName: "productpopularization" */ "@/views/otherLearn.vue"),
+                component: () => import(/* webpackChunkName: "productpopularization" */ "@/views/vue2Learn/otherLearn.vue"),
                 meta: {
                     title: "other-learn",
                     icon: "",

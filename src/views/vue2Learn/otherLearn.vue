@@ -1,5 +1,7 @@
 <template>
-	<div class="otherLearn">otherLearn</div>
+	<div class="otherLearn">
+		<div v-for="item in arr" :key="item" :ref="item">{{ item }}</div>
+	</div>
 </template>
 
 <script>
@@ -7,16 +9,17 @@
 export default {
 	name: 'otherLearn',
 	data() {
-		return {};
+		return {
+			arr: [1, 2, 3, 4]
+		};
 	},
 	created() {},
-	mounted() {},
+	mounted() {
+		console.log('this.$refs :>> ', this.$refs);
+	},
 	methods: {},
 	components: {}
 };
 </script>
 <style lang="scss" scope>
-.otherLearn {
-	position: relative;
-}
 </style>

@@ -28,17 +28,18 @@ module.exports = {
         "comma-dangle": [2, "never"], // 要求或禁止末尾逗号
         "no-mixed-spaces-and-tabs": [2], //关闭禁止混用tab和空格
         semi: [2], //分号结尾
-        "no-unused-vars": [
-            2,
-            {
-                // 允许声明未使用变量
-                vars: "local",
-                // 参数不检查
-                args: "none"
-            }
-        ],
+        // "no-unused-vars": [
+        //     0,
+        //     {
+        //         // 允许声明未使用变量
+        //         vars: "local",
+        //         // 参数不检查
+        //         args: "none"
+        //     }
+        // ],
+        // "no-unused-vars": "off",
         "vue/no-parsing-error": [
-            2,
+            0,
             {
                 "x-invalid-end-tag": false,
                 "invalid-first-character-of-tag-name": false

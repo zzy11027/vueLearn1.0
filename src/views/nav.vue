@@ -7,12 +7,12 @@
 		<v-list two-line>
 			<v-list-item-group v-model="selected" active-class="pink--text" multiple>
 				<template v-for="(item, index) in items">
-					<v-list-item :key="item.title">
+					<v-list-item :key="item.title" @click="goRouter(item.navName)">
 						<template v-slot:default="{ active }">
 							<v-list-item-content>
 								<v-list-item-title v-text="item.title"></v-list-item-title>
 
-								<v-list-item-subtitle class="text--primary" v-text="item.headline"></v-list-item-subtitle>
+								<v-list-item-subtitle class="text--primary" v-text="item.navName"></v-list-item-subtitle>
 
 								<v-list-item-subtitle v-text="item.subtitle"></v-list-item-subtitle>
 							</v-list-item-content>
@@ -31,6 +31,7 @@
 				</template>
 			</v-list-item-group>
 		</v-list>
+		<router-view></router-view>
 	</v-card>
 </template>
 
@@ -40,44 +41,31 @@ export default {
 	name: 'Navs',
 	data() {
 		return {
-			selected: [2],
+			selected: [0],
 			items: [
 				{
-					action: '15 min',
-					headline: 'Brunch this weekend?',
-					subtitle: `I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
-					title: 'Ali Connors'
+					action: '',
+					navName: '/vue2',
+					subtitle: ``,
+					title: 'vue2Learn'
 				},
 				{
-					action: '2 hr',
-					headline: 'Summer BBQ',
-					subtitle: `Wish I could come, but I'm out of town this weekend.`,
-					title: 'me, Scrott, Jennifer'
-				},
-				{
-					action: '6 hr',
-					headline: 'Oui oui',
-					subtitle: 'Do you have Paris recommendations? Have you ever been?',
-					title: 'Sandra Adams'
-				},
-				{
-					action: '12 hr',
-					headline: 'Birthday gift',
-					subtitle: 'Have any ideas about what we should get Heidi for her birthday?',
-					title: 'Trevor Hansen'
-				},
-				{
-					action: '18hr',
-					headline: 'Recipe to try',
-					subtitle: 'We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
-					title: 'Britta Holt'
+					action: '',
+					navName: '/apply-call',
+					subtitle: ``,
+					title: 'Apply Call 的使用'
 				}
 			]
 		};
 	},
 	created() {},
 	mounted() {},
-	methods: {},
+	methods: {
+		goRouter(name) {
+			console.log('name :>> ', name);
+			this.$router.push({ path: name });
+		}
+	},
 	components: {}
 };
 </script>
